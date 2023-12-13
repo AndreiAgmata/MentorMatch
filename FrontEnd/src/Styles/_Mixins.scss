@@ -1,0 +1,16 @@
+@mixin  primButton{
+    background-color: $primColour;
+    color: white;
+      &:hover{
+        background-color: $primDark;
+      }
+  }
+
+  @mixin  secButton{
+    background-color: $secColour;
+      color: white;
+      &:hover{
+        background-color: $secDark;
+      }
+  }
+  

@@ -1,0 +1,36 @@
+@import './Mixins';
+@import './Variables';
+
+
+
+.landing-page{
+  
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2{
+      font-family: tommyBold;
+      text-align: left;
+      font-size: 5rem;
+    }
+
+    text{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title{
+      display: flex;
+    }
+
+    .mentor{
+      color: $primColour;
+    }
+    
+    .match{
+      color: $secColour;
+    }
+    
+  }

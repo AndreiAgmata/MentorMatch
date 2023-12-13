@@ -1,0 +1,69 @@
+@import './Mixins';
+@import './Variables';
+
+.register-login-card-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header{
+      background-color: $secColour;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: tommyMedium;
+    }
+
+    .footer{
+      background-color: $secColour;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: tommyMedium;
+    }
+
+    .body{
+      background-color: $secDark;
+      color: white;
+
+      .checkbox-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .btn-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+
+        h4{
+          color: $primColour;
+        }
+
+        .link{
+          color: white;
+          margin-top: 0;
+        }
+
+        .btn-colour2{
+          margin-top: 10px;
+          @include secButton()
+        }
+      }
+
+
+      p{
+        color: $primColour;
+        margin-top: 5px;
+      }
+      
+    }
+   
+  }

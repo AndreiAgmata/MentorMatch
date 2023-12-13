@@ -1,0 +1,155 @@
+@import "./Mixins";
+@import "./Variables";
+
+p{
+  font-family: tommyRegular;
+}
+
+.fullWidth{
+  width: 100%;
+}
+
+.searchRow{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .searchForm{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+    .form-control
+    {
+      border-color: $secColour;
+      border-width: 2px
+    }
+    
+    .btn-colour2{
+      background-color: $secColour;
+      margin-left: 1rem;
+      color: white;
+      &:hover{
+        background-color: $secDark
+      }
+    }
+  }
+}
+
+.mentor-list
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  .mentor-card{
+    // &:hover{
+    //   transform: scale(1.04);
+    // }
+
+    background-color: $secColour;
+    margin: 0.5rem;
+    color: white;
+    
+    
+
+    .body{
+      
+      .picture-name-rate-course-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .profile-picture-container{
+           border-radius: 50%;
+           background-color: $secDark;
+           width: 100%;
+           max-width: 9rem;
+          height: 9rem;
+           
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          .profile-picture{
+              object-fit: cover;
+              border-radius: 50%;
+              width: 8rem;
+              height: 8rem;
+          }
+  
+      }
+
+        .name-rate-course-section{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          
+          h2{
+            text-align: center;
+            font-family: tommyBold;
+          }
+        }
+      }
+
+      .courses-section{
+
+        .courses{
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 15rem;
+        }
+        
+        .course{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: small;
+          width: 60px;
+          height: 30px;
+          border: 1px solid white;
+          border-radius: 5px;
+          margin: 5px;
+        }
+      }
+      
+    }
+
+    .footer{
+      background-color: $secDark;
+
+      .info-buttons-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .info-section{
+          font-family: tommyRegular;
+          height: 5rem;
+          overflow: hidden;
+        }
+
+        .btn-colour2{
+          border-color: white;
+          color: white;
+          &:hover{
+            background-color: $secColour;
+            border-color: $secColour;
+          }
+        }
+      }
+
+    
+    }
+  }
+}

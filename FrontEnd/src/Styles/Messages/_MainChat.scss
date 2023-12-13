@@ -1,0 +1,231 @@
+@import '../Mixins';
+@import '../Variables';
+
+
+.main-chat{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .components-container{
+        border: 2px solid $secDark;
+        border-radius: 10px;
+        width: 65%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+
+        .sidebar{
+            flex: 1;
+            background-color: $secColour;
+
+            .sidebar-nav{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: tommyMedium;
+                color: white;
+                background-color: $secDark;
+                height: 50px;
+            }
+
+            .search{
+                border-bottom: 1px solid $secDark;
+
+                span{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    font-family: tommyRegular;
+                    margin-bottom: 5px;
+                }
+
+                .search-form{
+                    padding: 10px;
+                    input{
+                        background-color: transparent;
+                        border: 1px solid white;
+                        border-radius: 6px;
+                        color: white;
+                        font-family: tommyRegular;
+
+                        &::placeholder{
+                            color: rgba(211, 211, 211, 0.521);
+                        }
+                    }
+                }
+
+                
+            }
+
+            .user-chat{
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+                font-family: tommyRegular;
+
+                &:hover{
+                    background-color: $secDark;
+                }
+
+                img{
+                    object-fit: cover;
+                    border-radius: 50%;
+                    width: 3rem;
+                    height:
+                     3rem;
+                }
+
+                .info{
+                    span{
+                        font-family: tommyBold;
+                    }
+                    p{
+                        color: rgba(211, 211, 211, 0.715);
+                    }
+                }
+            }
+        }
+
+        .chat{
+            flex: 2;
+
+            .info{
+                padding-left: 10px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                background-color: $secColour;  
+                font-family: tommyBold; 
+                color: white;
+                justify-content: space-between;
+
+                .btn-colour2{
+                    background-color: $secDark;
+                    color: white;
+                    font-family: tommyRegular;
+                    margin-right: 15px;
+                }
+
+            }
+
+            .messages{
+                padding: 10px;
+                height: calc(100% - 140px);
+                background-color: lightgrey;
+                overflow: scroll;
+
+                .message{
+                    display: flex;
+                    gap: 20px;
+                    margin-bottom: 20px;
+
+                    .message-info{
+                        display: flex;
+                        flex-direction: column;
+                        color: gray;
+                        font-family: tommyRegular;
+                       
+                        img{
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .content{
+                        max-width: 80%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        p{
+                            background-color: white;
+                            padding: 10px 20px;
+                            border-radius: 0px 10px 10px 10px;
+                            max-width: max-content;
+                        }
+
+                        img{
+                            width: 50%;
+                        }
+                    }
+
+                    &.owner
+                    {
+                       flex-direction: row-reverse; 
+
+                       .content{
+                        align-items: flex-end;
+
+                        p{
+                            background-color: $secColour;
+                            color: white;
+                            font-family: tommyRegular;
+                            border-radius: 10px 0px 10px 10px;
+                        }
+                       }
+
+                       
+                    }
+                }
+            }
+
+            .input{
+                padding: 10px;
+                height: 50px;
+                // display: flex;
+                // align-items: center;
+                // justify-content: space-between;
+
+                .main-input{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                .image-input{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                input{
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    font-family: tommyRegular;
+
+                    &::placeholder{
+                        color: rgba(82, 82, 82, 0.553);
+                    }
+                }
+
+                .send{
+                    display: flex;
+                    align-items: center;
+                    
+                    gap: 10px;
+
+                    button{
+                        background-color: $secColour;
+                        border-radius: 10%;
+                        color: white;
+                        font-family: tommyRegular;
+                        
+                    }
+
+                    img{
+                        height: 24px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
