@@ -1,0 +1,125 @@
+@import "./NavigationBar";
+@import "./LandingPage";
+@import "./SignUpInForms";
+@import "./Profile";
+@import "./Mixins";
+@import "./Variables";
+@import "./StudentDashboard";
+@import "./TutorProfile";
+@import "./PaymentForm";
+@import "./InvitationForm";
+@import "./StudentInvitationDash";
+@import "./MentorSchedule";
+
+@import "./Messages/MainChat";
+
+@font-face {
+  font-family: tommyRegular;
+  src: url(../Components/Fonts/tommyRegular.otf);
+}
+
+@font-face {
+  font-family: tommyMedium;
+  src: url(../Components/Fonts/tommyMedium.otf);
+}
+
+@font-face {
+  font-family: tommyBold;
+  src: url(../Components/Fonts/tommyBold.otf);
+}
+
+body {
+  background-color: #f7f8ff;
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+}
+
+.change-btn {
+  margin-left: 0.5rem;
+}
+
+.btn-delete {
+  @include primButton();
+  margin-left: 0.5rem;
+  color: white;
+}
+
+.alert-message {
+  background-color: $primColour;
+  color: white;
+}
+
+.transactionTotals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 70vh;
+
+  .transactionCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "tommyMedium";
+    color: white;
+    background-color: $secColour;
+    width: 30rem;
+    height: 20rem;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    .transac-header {
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      background-color: $secDark;
+    }
+
+    .transac-body {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+.profileWithComment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  height: 100%;
+
+  .comment-card-container {
+    width: 40%;
+    height: 70vh;
+
+    .comment-card {
+      width: 100%;
+      height: 100%;
+      background-color: $secDark;
+
+      .profile-comment-card {
+        margin-bottom: 10px;
+      }
+
+      .reviews-card-header {
+        color: white;
+        font-family: "tommyBold";
+        font-size: 2rem;
+        background-color: $secColour;
+        text-align: center;
+      }
+    }
+  }
+}

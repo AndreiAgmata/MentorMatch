@@ -1,0 +1,138 @@
+@import "./Mixins";
+@import "./Variables";
+
+.hero-section {
+  background-color: #f3f4f6;
+
+  .hero {
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text-col {
+      @media (min-width: 992px) {
+        min-width: 32rem;
+      }
+
+      .tag-line {
+        font-size: clamp(2.75rem, 10vw, 3.45rem);
+        color: $secDark;
+      }
+    }
+
+    .btn-2 {
+      @include primButton;
+      font-size: 1.15rem;
+      padding-block: 0.65rem;
+      width: 46%;
+    }
+  }
+}
+
+.features-section {
+  width: 100%;
+  padding-bottom: 5rem;
+
+  .feature-title {
+    margin-block: 8rem;
+    font-size: clamp(2.75rem, 5vw, 3rem);
+  }
+
+  .feature-card {
+    border-radius: 1rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 11px 11px 50px 0 rgba(58, 58, 58, 0.1);
+
+    .feature-card-header {
+      background-color: #f7f8ff;
+      padding: 2rem;
+
+      .animation {
+        width: 35%;
+      }
+    }
+
+    .feature-card-body {
+      padding: 2rem;
+    }
+  }
+}
+
+.stats-section {
+  background-color: $primColour;
+  padding-block: 8rem;
+
+  .stats-title {
+    font-size: clamp(2.25rem, 5vw, 3rem);
+  }
+
+  .stats {
+    .stat {
+      .stat-value {
+        font-size: 5rem;
+        font-size: clamp(2.5rem, 10vw, 5rem);
+        font-weight: 600;
+      }
+
+      .stat-desc {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+.testimonials-section {
+  padding-bottom: 8rem;
+  .testimonials-title {
+    margin-block: 8rem;
+    font-size: clamp(2.25rem, 5vw, 3rem);
+  }
+
+  .item-card {
+    border-radius: 1rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 11px 11px 50px 0 rgba(58, 58, 58, 0.1);
+
+    .comment {
+      padding: 2rem;
+    }
+
+    .user-details {
+      padding: 2rem;
+      background-color: #f7f8ff;
+
+      .profile-picture {
+        width: 4rem;
+        height: auto;
+      }
+    }
+  }
+}
+
+.faqs-section {
+  .faq-items {
+    .faq-item {
+      box-shadow: 11px 11px 50px 0 rgba(58, 58, 58, 0.1);
+
+      .question {
+        cursor: pointer;
+      }
+      .answer {
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+.footer-section {
+  background-color: #f3f4f6;
+  padding-block: 6rem;
+
+  .footer-logo {
+    width: 3rem;
+  }
+}

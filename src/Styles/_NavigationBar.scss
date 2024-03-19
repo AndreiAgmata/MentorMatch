@@ -1,0 +1,54 @@
+@import "./Mixins";
+@import "./Variables";
+
+.sticky-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background-color: #f3f4f6;
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .messages {
+      display: flex;
+
+      .count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2px;
+        background-color: $primColour;
+        font-size: small;
+        width: 25px;
+        height: 25px;
+        border-radius: 25px;
+        color: white;
+      }
+    }
+  }
+
+  .btn-colour2 {
+    @include secButton();
+  }
+
+  .profile-picture-container {
+    border-radius: 50%;
+    background-color: $secColour;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profile-picture {
+      object-fit: cover;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

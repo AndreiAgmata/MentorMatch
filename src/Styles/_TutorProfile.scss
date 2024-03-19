@@ -1,0 +1,186 @@
+@import './Mixins';
+@import './Variables';
+
+.tutor-profile
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    .tutor-details-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 80%;
+    
+        .profile-picture-container{
+            border-radius: 50%;
+            background-color: $secColour;
+            width: 22rem;
+            height: 22rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .profile-picture{
+                object-fit: cover;
+                border-radius: 50%;
+                width: 20rem;
+                height: 20rem;
+            }
+    
+        }
+    
+        .header{
+          background-color: $secColour;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-family: tommyMedium;
+    
+         
+        }
+    
+        .footer{
+          background-color: $secColour;
+          width: 100%;
+          color: white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          font-family: tommyMedium;
+
+          .btn-edit{
+            background-color: $secDark;
+            color: white;
+          }
+
+          .pay{
+            margin-left: .5rem;
+          }
+        }
+    
+        .body{
+          background-color: $secDark;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+    
+          .courses{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: left;
+    
+            .course-container{
+                width: 100%;
+                
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                .card{                
+                    margin-right: 0.5rem;
+                    margin-top: 0.5rem;
+    
+                    .course-card{
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    }
+                    .course-label{
+                        margin: -5%;
+                    }
+                }    
+               
+            }
+    
+            
+          }
+    
+          .checkbox-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+          }
+    
+          .btn-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+    
+            .btn-colour2{
+              @include secButton()
+            }
+          }
+          
+        }
+       
+      }
+
+      .comments-container{
+        margin-top: 3rem;
+        width: 80%;
+        .comments-card{
+            width: 100%;
+        }
+
+        .comment-card{
+            margin-bottom: 0.5rem;
+            h6{
+                font-family: tommyBold;
+                color: $secDark;
+            }
+           
+        }
+
+        .header{
+            background-color: $secColour;
+            color: white;
+            font-family: tommyBold
+        }
+
+        .body{
+            background-color: $secDark;
+            color: white;
+            font-family: tommyRegular
+        }
+
+        .footer{
+            background-color: $secColour;
+            color: white;
+            font-family: tommyRegular; 
+            
+            .comment-button-container{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+
+                .btn-colour2
+                {
+                    background-color: $secDark;
+                    color: white;
+                }
+            }
+        }
+      }
+
+}
+
+
+
+  
+   
+  

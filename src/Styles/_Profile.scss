@@ -1,0 +1,221 @@
+@import './Mixins';
+@import './Variables';
+
+.profile-card-container{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .profile-picture-container{
+        border-radius: 50%;
+        background-color: $secColour;
+        width: 22rem;
+        height: 22rem;
+        margin-bottom: -5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .profile-picture{
+            object-fit: cover;
+            border-radius: 50%;
+            width: 20rem;
+            height: 20rem;
+        }
+
+    }
+
+    .header{
+      background-color: $secColour;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: tommyMedium;
+
+     
+    }
+
+    .footer{
+      background-color: $secColour;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: tommyMedium;
+
+      .btn-edit{
+        background-color: $secDark;
+        color: white;
+      }
+    }
+
+    .body{
+      background-color: $secDark;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .courses{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: left;
+
+        .course-container{
+            width: 100%;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            .card{                
+                margin-right: 0.5rem;
+                margin-top: 0.5rem;
+
+                .course-card{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+                .course-label{
+                    margin: -5%;
+                }
+            }    
+           
+        }
+
+        
+      }
+
+      .checkbox-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .btn-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+
+      
+        .btn-colour2{
+          @include secButton()
+        }
+      }
+      
+    }
+   
+  }
+
+  .edit-profile-card-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header{
+      background-color: $secColour;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: tommyMedium;
+    }
+
+    .footer{
+      background-color: $secColour;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: tommyMedium;
+    }
+
+    .body{
+      background-color: $secDark;
+      color: white;
+
+      .course-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .card{
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+
+           
+
+            .course-card{
+          
+              display: flex;
+              flex-direction: row;
+              justify-content: space-around;
+              align-items: center;
+
+              .course-label{
+                margin-right: 5px;
+              }
+
+              .btn{
+                margin-top: -7px;
+              }
+            }
+
+            
+        }    
+       
+    }
+
+      .checkbox-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .btn-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+
+        .btn-colour2{
+          @include secButton()
+        }
+      }
+
+      p{
+        color: $primColour;
+        margin-top: 5px;
+      }
+      
+    }
+   
+  }
+
+  .picture-upload{
+    display: flex;
+
+    .btn-colour2{
+      background-color: $secColour;
+      color: white;
+      :hover{
+        background-color: $secDark;
+      }
+      margin-left: 10px;
+    }
+
+  }

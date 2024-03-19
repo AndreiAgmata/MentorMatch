@@ -1,0 +1,23 @@
+@mixin primButton {
+  background-color: $primColour;
+  border-radius: 3rem;
+  font-weight: 700;
+  padding-inline: 1.5rem;
+  padding-block: 0.5rem;
+  color: rgb(22, 22, 22);
+  &:hover {
+    background-color: $primDark;
+  }
+}
+
+@mixin secButton {
+  background-color: $secColour;
+  border-radius: 3rem;
+  font-weight: 700;
+  padding-inline: 1.5rem;
+  padding-block: 0.5rem;
+  color: white;
+  &:hover {
+    background-color: $secDark;
+  }
+}

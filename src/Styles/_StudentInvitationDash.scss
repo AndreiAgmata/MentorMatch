@@ -1,0 +1,33 @@
+
+.invitations-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .invitations-card{
+        width: 75%;
+        margin-top: 5rem;
+        background-color: $secColour;
+
+        .header{
+            display: flex;
+            justify-content:center ;
+            align-items: center;
+            background-color: $secDark;
+            color: white;
+            font-family: tommyMedium;
+        }
+
+        .invitations-table{
+            background-color: $secColour;
+
+            .btn-colour2
+            {
+                color: white;
+                background-color: $secColour;
+                font-family: tommyRegular;
+            }
+        }
+    }
+    
+}

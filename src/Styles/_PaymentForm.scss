@@ -1,0 +1,61 @@
+@import './Mixins';
+@import './Variables';
+
+.payment-form-container
+{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header
+    {
+        display: flex;
+        justify-content: center;
+        background-color: $secColour;
+        color: white;
+        font-family: tommyBold;
+    }
+
+    .body
+    {
+        color: white;
+
+        .btn-container
+        {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.5rem;
+
+            .pay-btn
+            {
+                color: white;
+                background-color: $secDark;
+                border-color: $secDark;
+                
+            }
+        }
+    }
+
+    .footer
+    {
+        color: white;
+        background-color: $secColour;
+        display: flex;
+        justify-content: center;
+        font-family: tommyMedium;
+    }
+
+   
+    .payment-form-card{   
+        width: 30%;
+    }
+
+
+}
+
+
+#payment-form {
+    
+    
+  }

@@ -1,0 +1,41 @@
+.weekly-schedule-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: tommyRegular;
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .buttons{
+            display: flex;
+            gap: 10px;
+
+            .btn-colour2{
+                color: white;
+                background-color: $secColour;
+                font-family: tommyRegular;
+                width: 140px;
+            }
+
+            .btn-outline-secondary{
+                color: $secColour;
+                font-family: tommyRegular;
+                width: 140px;
+            }
+        }
+    }
+}
+
+.appt-card{
+    border-color: $secDark;
+    margin-bottom: 10px;
+}
+
+.event-footer{
+    display: flex;
+    justify-content: center;
+
+}
