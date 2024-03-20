@@ -6,7 +6,7 @@ import user4 from "../Images/user-4.jpg";
 
 function Testimonials() {
   return (
-    <div className="testimonials-section">
+    <div className="testimonials-section" id="reviews">
       <div className="container d-flex flex-column justify-content-center align-items-center">
         <h3 className="testimonials-title fw-bold text-dark text-center">
           What students say about MentorMatch

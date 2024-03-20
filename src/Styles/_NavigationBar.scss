@@ -8,47 +8,114 @@
   z-index: 999;
   background-color: #f3f4f6;
 
-  .navbar-nav {
+  .nav-content-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
 
-    .messages {
-      display: flex;
-
-      .count {
+    .nav-header {
+      padding: 1rem;
+      @media (max-width: 992px) {
+        z-index: 999;
+        background-color: #f3f4f6;
+        width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        margin-left: 2px;
-        background-color: $primColour;
-        font-size: small;
-        width: 25px;
-        height: 25px;
-        border-radius: 25px;
-        color: white;
+      }
+
+      .navbar-brand {
+        z-index: 99;
+      }
+
+      .burger {
+        cursor: pointer;
       }
     }
-  }
 
-  .btn-colour2 {
-    @include secButton();
-  }
+    .nav-items-desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-left: auto;
+      padding: 1rem;
 
-  .profile-picture-container {
-    border-radius: 50%;
-    background-color: $secColour;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
 
-    .profile-picture {
-      object-fit: cover;
+    .nav-items-mobile {
+      position: fixed;
+      z-index: 98;
+      top: 0;
+      width: 100%;
+      padding-top: 6rem;
+      padding-bottom: 1.5rem;
+      padding-inline: 6rem;
+      background-color: #f7f8ff;
+      border-bottom: 4px solid #fd346e;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transform: translateY(-100%);
+
+      @media (min-width: 992px) {
+        display: none;
+      }
+
+      @media (max-width: 576px) {
+        padding-inline: 1rem;
+      }
+    }
+
+    .nav-items {
+      a {
+        text-decoration: none;
+        color: #6c757d;
+      }
+
+      .messages {
+        display: flex;
+
+        .count {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 2px;
+          background-color: $primColour;
+          font-size: small;
+          width: 25px;
+          height: 25px;
+          border-radius: 25px;
+          color: white;
+        }
+      }
+    }
+
+    .btn-colour2 {
+      @include secButton();
+    }
+
+    .profile-picture-container {
       border-radius: 50%;
-      width: 2rem;
-      height: 2rem;
+      background-color: $secColour;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .profile-picture {
+        object-fit: cover;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+      }
     }
   }
 }

@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 
 function Hero() {
   return (
-    <div className="hero-section">
+    <div className="hero-section" id="home">
       <div className="container">
         <div className="hero row">
           <div className="col-12 col-lg-5 text-col mt-5 pt-5 d-flex flex-column justify-content-center align-items-center d-lg-block">

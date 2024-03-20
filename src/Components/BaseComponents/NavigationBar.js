@@ -8,7 +8,7 @@ import Image from "react-bootstrap/esm/Image";
 import logo from "../Images/logo.png";
 import axios from "axios";
 import profile from "../Images/default-profile-picture.jpeg";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { signOut } from "firebase/auth";
@@ -19,6 +19,9 @@ import { db } from "../../firebase";
 import { doc, onSnapshot } from "firebase/firestore";
 import { Alert } from "react-bootstrap";
 import { MessageAlertContext } from "../../Context/MessageAlertContext";
+import { RxHamburgerMenu } from "react-icons/rx";
+import gsap from "gsap";
+import NavMenu from "./NavMenu";
 
 function NavigationBar() {
   const navigate = useNavigate();
@@ -96,11 +99,35 @@ function NavigationBar() {
 
   ///////////
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  let navRef = useRef();
+
+  const toggleMenu = () => {
+    const tl = new gsap.timeline();
+    const q = gsap.utils.selector(navRef);
+    if (!menuOpen) {
+      tl.to(q(".nav-items-mobile"), {
+        yPercent: 100,
+        duration: 1,
+        ease: "expo.out",
+      });
+      setMenuOpen(true);
+    } else {
+      tl.to(q(".nav-items-mobile"), {
+        yPercent: -100,
+        duration: 1,
+        ease: "power3.inOut",
+      });
+      setMenuOpen(false);
+    }
+  };
+
   return (
-    <div className="App">
-      <Navbar className="sticky-nav">
-        <Container>
-          <Navbar.Brand
+    <nav className="sticky-nav" ref={(el) => (navRef = el)}>
+      <div className="nav-content-container position-relative">
+        <div className="nav-header">
+          <a
+            href="/"
             onClick={() => {
               !userSignedIn
                 ? navigate("/")
@@ -108,7 +135,7 @@ function NavigationBar() {
                 ? navigate("/schedule")
                 : navigate("/dashboard");
             }}
-            className="d-flex flex-row align-items-center justify-content-center gap-2"
+            className="navbar-brand d-flex flex-row align-items-center justify-content-center gap-2"
           >
             <img
               src={logo}
@@ -117,123 +144,144 @@ function NavigationBar() {
               alt="mentor match logo"
             />
             <p className="m-0 fw-bolder fs-5 text-dark">MentorMatch</p>
-          </Navbar.Brand>
-
-          <Nav>
-            {!userSignedIn ? (
-              <>
-                <Nav.Item className="ml-auto">
-                  <Row>
-                    <Col xs="auto">
-                      <Nav.Link
-                        onClick={() => {
-                          navigate(`/login`);
-                        }}
-                      >
-                        <p className="m-0 fw-bold">Log In</p>
-                      </Nav.Link>
-                    </Col>
-                    <Col xs="auto">
-                      <Button
-                        variant="colour2"
-                        onClick={() => {
-                          navigate(`/register`);
-                        }}
-                      >
-                        Try Now
-                      </Button>
-                    </Col>
-                  </Row>
-                </Nav.Item>
-              </>
-            ) : (
-              <>
-                <Nav.Item className="ml-auto">
-                  {unreadChatContext > 0 ? (
-                    <Nav.Link
-                      onClick={() => {
-                        navigate(`/messages`);
-                      }}
-                    >
-                      <div className="messages">
-                        <span>Messages</span>
-                        <span className="count">{unreadChatContext}</span>
-                      </div>
-                    </Nav.Link>
-                  ) : (
-                    <Nav.Link
-                      onClick={() => {
-                        navigate(`/messages`);
-                      }}
-                    >
-                      Messages
-                    </Nav.Link>
-                  )}
-                </Nav.Item>
-                {!user.isMentor && (
-                  <Nav.Item className="ml-auto">
-                    <Nav.Link
-                      onClick={() => {
-                        navigate(`/invitations`);
-                      }}
-                    >
-                      Invitations
-                    </Nav.Link>
-                  </Nav.Item>
-                )}
-                {!user.isMentor && (
-                  <Nav.Item className="ml-auto">
-                    <Nav.Link
-                      onClick={() => {
-                        navigate(`/spending`);
-                      }}
-                    >
-                      Spending
-                    </Nav.Link>
-                  </Nav.Item>
-                )}
-                {user.isMentor && (
-                  <Nav.Item className="ml-auto">
-                    <Nav.Link
-                      onClick={() => {
-                        navigate(`/earning`);
-                      }}
-                    >
-                      Earnings
-                    </Nav.Link>
-                  </Nav.Item>
-                )}
-                <Nav.Item className="ml-auto">
-                  <Nav.Link
+          </a>
+          <div
+            className="burger ml-auto d-block d-lg-none"
+            onClick={toggleMenu}
+          >
+            <RxHamburgerMenu color="black" size={"1.75em"} />
+          </div>
+        </div>
+        <NavMenu />
+        <div className="nav-items nav-items-desktop">
+          {!userSignedIn ? (
+            <>
+              <div className="nav-item">
+                <a href="#home">
+                  <p className="m-0 fw-bold">Home</p>
+                </a>
+              </div>
+              <div className="nav-item">
+                <a href="#features">
+                  <p className="m-0 fw-bold">Features</p>
+                </a>
+              </div>
+              <div className="nav-item">
+                <a href="#reviews">
+                  <p className="m-0 fw-bold">Reviews</p>
+                </a>
+              </div>
+              <div className="nav-item">
+                <a href="#faqs">
+                  <p className="m-0 fw-bold">Faqs</p>
+                </a>
+              </div>
+              <div
+                className="nav-item"
+                onClick={() => {
+                  navigate(`/login`);
+                }}
+              >
+                <p className="m-0 fw-bold text-secondary">Log In</p>
+              </div>
+              <div className="nav-item align-self-center">
+                <Button
+                  variant="colour2"
+                  onClick={() => {
+                    navigate(`/register`);
+                  }}
+                >
+                  Try Now
+                </Button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="nav-item">
+                {unreadChatContext > 0 ? (
+                  <div
                     onClick={() => {
-                      navigate(`/profile`);
+                      navigate(`/messages`);
                     }}
                   >
-                    <div className="profile-picture-container">
-                      <Image
-                        className="profile-picture"
-                        src={
-                          user.profilePicture === ""
-                            ? profile
-                            : user.profilePicture
-                        }
-                      ></Image>
+                    <div className="messages">
+                      <span>Messages</span>
+                      <span className="count">{unreadChatContext}</span>
                     </div>
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item className="ml-auto">
-                  <Col xs="auto">
-                    <Button variant="colour2" onClick={signout}>
-                      Sign Out
-                    </Button>
-                  </Col>
-                </Nav.Item>
-              </>
-            )}
-          </Nav>
-        </Container>
-      </Navbar>
-    </div>
+                  </div>
+                ) : (
+                  <div
+                    onClick={() => {
+                      navigate(`/messages`);
+                    }}
+                  >
+                    Messages
+                  </div>
+                )}
+              </div>
+              {!user.isMentor && (
+                <div className="nav-item">
+                  <div
+                    onClick={() => {
+                      navigate(`/invitations`);
+                    }}
+                  >
+                    Invitations
+                  </div>
+                </div>
+              )}
+              {!user.isMentor && (
+                <div className="nav-item">
+                  <div
+                    onClick={() => {
+                      navigate(`/spending`);
+                    }}
+                  >
+                    Spending
+                  </div>
+                </div>
+              )}
+              {user.isMentor && (
+                <div className="nav-item">
+                  <div
+                    onClick={() => {
+                      navigate(`/earning`);
+                    }}
+                  >
+                    Earnings
+                  </div>
+                </div>
+              )}
+              <div className="nav-item">
+                <div
+                  onClick={() => {
+                    navigate(`/profile`);
+                  }}
+                >
+                  <div className="profile-picture-container">
+                    <Image
+                      className="profile-picture"
+                      src={
+                        user.profilePicture === ""
+                          ? profile
+                          : user.profilePicture
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="nav-item">
+                <Col xs="auto">
+                  <Button variant="colour2" onClick={signout}>
+                    Sign Out
+                  </Button>
+                </Col>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </nav>
   );
 }
 

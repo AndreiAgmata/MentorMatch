@@ -5,15 +5,79 @@
   z-index: 999;
   background-color: #f3f4f6;
 }
-.sticky-nav .navbar-nav {
+.sticky-nav .nav-content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+}
+.sticky-nav .nav-content-container .nav-header {
+  padding: 1rem;
+}
+@media (max-width: 992px) {
+  .sticky-nav .nav-content-container .nav-header {
+    z-index: 999;
+    background-color: #f3f4f6;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.sticky-nav .nav-content-container .nav-header .navbar-brand {
+  z-index: 99;
+}
+.sticky-nav .nav-content-container .nav-header .burger {
+  cursor: pointer;
+}
+.sticky-nav .nav-content-container .nav-items-desktop {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
+  margin-left: auto;
+  padding: 1rem;
 }
-.sticky-nav .navbar-nav .messages {
+@media (max-width: 992px) {
+  .sticky-nav .nav-content-container .nav-items-desktop {
+    display: none;
+  }
+}
+.sticky-nav .nav-content-container .nav-items-mobile {
+  position: fixed;
+  z-index: 98;
+  top: 0;
+  width: 100%;
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+  padding-inline: 6rem;
+  background-color: #f7f8ff;
+  border-bottom: 4px solid #fd346e;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transform: translateY(-100%);
+}
+@media (min-width: 992px) {
+  .sticky-nav .nav-content-container .nav-items-mobile {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .sticky-nav .nav-content-container .nav-items-mobile {
+    padding-inline: 1rem;
+  }
+}
+.sticky-nav .nav-content-container .nav-items a {
+  text-decoration: none;
+  color: #6c757d;
+}
+.sticky-nav .nav-content-container .nav-items .messages {
   display: flex;
 }
-.sticky-nav .navbar-nav .messages .count {
+.sticky-nav .nav-content-container .nav-items .messages .count {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +89,7 @@
   border-radius: 25px;
   color: white;
 }
-.sticky-nav .btn-colour2 {
+.sticky-nav .nav-content-container .btn-colour2 {
   background-color: #7b61ff;
   border-radius: 3rem;
   font-weight: 700;
@@ -33,10 +97,10 @@
   padding-block: 0.5rem;
   color: white;
 }
-.sticky-nav .btn-colour2:hover {
+.sticky-nav .nav-content-container .btn-colour2:hover {
   background-color: #6001d3;
 }
-.sticky-nav .profile-picture-container {
+.sticky-nav .nav-content-container .profile-picture-container {
   border-radius: 50%;
   background-color: #7b61ff;
   width: 2.5rem;
@@ -45,7 +109,7 @@
   justify-content: center;
   align-items: center;
 }
-.sticky-nav .profile-picture-container .profile-picture {
+.sticky-nav .nav-content-container .profile-picture-container .profile-picture {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;

@@ -9,7 +9,7 @@ import feature6 from "../Animations/feature6.json";
 
 function Features() {
   return (
-    <div className="features-section">
+    <div className="features-section" id="features">
       <div className="container w-100 d-flex flex-column justify-content-center align-items-center">
         <h3 className="feature-title fw-bold text-dark text-center">
           MentorMatch is Here to Help!

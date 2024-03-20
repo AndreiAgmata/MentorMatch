@@ -38,7 +38,7 @@ function Faq({ data }) {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="faq-item bg-white py-3 px-5 w-100 rounded-3">
+    <div className="faq-item bg-white py-3 px-5 w-100 rounded-3" id="faqs">
       <div
         className="question d-flex justify-content-between align-items-center"
         onClick={() => toggleAnswer()}
